@@ -1,30 +1,40 @@
-import React from "react";
-import HeadComponent from '../components/Head';
+import Image from "next/image";
+import HeadComponent from "../components/Head";
 
 // Constants
 const TWITTER_HANDLE = "_buildspace";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
-  
-  
   return (
-    <div className="App">
-      <HeadComponent/>
-      <div className="container">
-        <header className="header-container">
-          <p className="header"> 😳 Buildspace Emoji Store 😈</p>
-          <p className="sub-text">The only emoji store that accepts sh*tcoins</p>
+    <div className="bg-red-400 w-full h-screen flex items-center justify-center">
+      <HeadComponent />
+      <div className="flex p-5 flex-col text-center">
+        <header className="">
+          <p className="text-white font-bold text-5xl">
+            {" "}
+            😳 Amaru's Emoji Store 😈
+          </p>
+          <p className="text-white pt-2 text-lg">
+            The only emoji store that accepts sh*tcoins
+          </p>
         </header>
 
-        <main>
-          <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji" />
+        <main className="flex justify-center">
+          <div className="relative h-60 mt-5">
+            <img
+              className="w-full h-full top-0"
+              src="https://media.giphy.com/media/VF65SrQlmClUc/giphy.gif"
+              allowFullScreen
+              alt="emoji"
+            />
+          </div>
         </main>
 
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
+        <div className="flex items-center justify-center pt-10">
+          <img alt="Twitter Logo" className="h-8" src="twitter-logo.svg" />
           <a
-            className="footer-text"
+            className="text-white font-semibold"
             href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"

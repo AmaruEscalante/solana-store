@@ -1,12 +1,8 @@
-import React, { useMemo } from "react";
 import "../styles/globals.css";
-import "../styles/App.css";
+import React, { useMemo } from "react";
 
 const App = ({ Component, pageProps }) => {
-
-  return (
-    <Component {...pageProps} />
-  );
+  return <Component {...pageProps} />;
 };
 
 export default App;
