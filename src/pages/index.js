@@ -13,10 +13,11 @@ const App = () => {
         <header className="">
           <p className="text-white font-bold text-5xl">
             {" "}
-            😳 Amaru's Emoji Store 😈
+            🔮 Magic Traces Store 🧙‍♂️
           </p>
           <p className="text-white pt-2 text-lg">
-            The only emoji store that accepts sh*tcoins
+            The only store that takes a sh*t trace and converts it to a
+            beautiful illustration.
           </p>
         </header>
 
