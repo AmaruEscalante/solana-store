@@ -11,7 +11,7 @@ const App = () => {
   const { publicKey } = useWallet();
 
   return (
-    <div className="bg-red-100 w-full h-screen flex items-center justify-center">
+    <div className="bg-black w-full h-screen flex items-center justify-center">
       <HeadComponent />
       <div className="flex p-5 flex-col text-center">
         <header className="">
