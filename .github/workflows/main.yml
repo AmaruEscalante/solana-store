@@ -1,0 +1,20 @@
+# Github Action for sending telegram messages after successful build
+
+name: Deploy test app
+on:
+  push:
+    branches: [main]
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: send telegram notification on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
