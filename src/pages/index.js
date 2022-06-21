@@ -10,6 +10,13 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const App = () => {
   const { publicKey } = useWallet();
 
+  const renderNotConnectedContainer = () => (
+    <div className="flex justify-center items-center pt-5">
+      {/* <WalletMultiButton className="h-10 border-0 px-10 rounded-md text-md cursor-pointer font-bold text-white bg-gradient-to-r from-[#ff8867] to-[#ff52ff] ease-linear" /> */}
+      <WalletMultiButton className="cta-button connect-wallet-button" />
+    </div>
+  );
+
   return (
     <div className="bg-black w-full h-screen flex items-center justify-center">
       <HeadComponent />
@@ -34,10 +41,7 @@ const App = () => {
               alt="emoji"
             />
           </div>
-
-          <div className="flex justify-center items-center pt-5">
-            <WalletMultiButton className="h-10 border-0 px-10 rounded-md text-md cursor-pointer font-bold text-white bg-gradient-to-r from-[#ff8867] to-[#ff52ff] ease-linear" />
-          </div>
+          {publicKey ? "Connected!" : renderNotConnectedContainer()}
         </main>
 
         <div className="flex items-center justify-center pt-10">

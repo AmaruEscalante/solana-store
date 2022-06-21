@@ -2,20 +2,14 @@ import "../styles/globals.css";
 import "../styles/App.css";
 import { useMemo } from "react";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import {
-  WalletModal,
-  WalletModalProvider,
-} from "@solana/wallet-adapter-react-ui";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import {
-  GlowWalletAdapter,
-  PhantomWalletAdapter,
-  SlopeWalletaAdapter,
-  TorusWalletAdapter,
-} from "@solana/wallet-adapter-wallets";
+require("@solana/wallet-adapter-react-ui/styles.css");
+
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
 
 const App = ({ Component, pageProps }) => {
