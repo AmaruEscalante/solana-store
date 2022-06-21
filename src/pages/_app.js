@@ -7,7 +7,8 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-require("@solana/wallet-adapter-react-ui/styles.css");
+
+import "@solana/wallet-adapter-react-ui/styles.css";
 
 import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
