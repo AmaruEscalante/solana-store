@@ -10,17 +10,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: send telegram notification on push
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
+      # - name: send telegram notification on push
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     to: ${{ secrets.TELEGRAM_TO }}
+      #     token: ${{ secrets.TELEGRAM_TOKEN }}
+      #     message: |
+      #       ${{ github.actor }} created commit:
+      #       Commit message: ${{ github.event.commits[0].message }}
 
-            test project deployment was successful! ✨
+      #       test project deployment was successful! ✨
 
-            Repository: ${{ github.repository }}
+      #       Repository: ${{ github.repository }}
 
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+      #       See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
