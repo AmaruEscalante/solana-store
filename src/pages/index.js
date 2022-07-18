@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import Product from "../components/Product";
 import HeadComponent from "../components/Head";
 import { PublicKey } from "@solana/web3.js";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -9,11 +11,31 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
   const { publicKey } = useWallet();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    if (publicKey) {
+      fetch(`/api/fetchProducts`)
+        .then((response) => response.json())
+        .then((data) => {
+          setProducts(data);
+          console.log("Products", data);
+        });
+    }
+  }, [publicKey]);
 
   const renderNotConnectedContainer = () => (
     <div className="flex justify-center items-center pt-5">
       {/* <WalletMultiButton className="h-10 border-0 px-10 rounded-md text-md cursor-pointer font-bold text-white bg-gradient-to-r from-[#ff8867] to-[#ff52ff] ease-linear" /> */}
       <WalletMultiButton className="cta-button connect-wallet-button" />
+    </div>
+  );
+
+  const renderItemBuyContainer = () => (
+    <div className="products-container">
+      {products.map((product) => (
+        <Product key={product.id} product={product} />
+      ))}
     </div>
   );
 
@@ -33,15 +55,19 @@ const App = () => {
         </header>
 
         <main className="flex justify-center flex-col">
-          <div className="relative w-80 mt-5 self-center">
-            <img
-              className="w-full h-full top-0"
-              src="https://media.giphy.com/media/VF65SrQlmClUc/giphy.gif"
-              allowFullScreen
-              alt="emoji"
-            />
-          </div>
-          {publicKey ? "Connected!" : renderNotConnectedContainer()}
+          {publicKey ? (
+            renderItemBuyContainer()
+          ) : (
+            <div className="relative w-80 mt-5 self-center">
+              <img
+                className="w-full h-full top-0"
+                src="https://media.giphy.com/media/VF65SrQlmClUc/giphy.gif"
+                allowFullScreen
+                alt="emoji"
+              />
+              renderNotConnectedContainer()
+            </div>
+          )}
         </main>
 
         <div className="flex items-center justify-center pt-10">
