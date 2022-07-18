@@ -1,7 +1,7 @@
-import styles from "../styles/Product.modules.css";
+import styles from "../styles/Product.module.css";
 import IPFSDownload from "./IpfsDownload";
 
-const Product = () => {
+const Product = ({ product }) => {
   const { id, name, price, description, image_url } = product;
 
   return (
