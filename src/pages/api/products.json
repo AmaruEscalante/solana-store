@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Input Trace",
+    "name": "Output Trace 1",
     "price": "0.09",
     "description": "Just a trace",
     "image_url": "https://i.imgur.com/R3ZzDjC.png",
-    "filename": "trace_input_1.zip",
-    "hash": "Qmc6j5LiDKe3DuX3VLc41UVSbmp4AtBJbpJVSumdgnh2g5"
+    "filename": "trace_output_2.zip",
+    "hash": "QmYG5tHVsAonFutML1uj3Q5MAZFGLG32JjcTbznT8nXker"
   },
   {
     "id": 1,
-    "name": "Output Trace",
+    "name": "Output Trace 3",
     "price": "0.09",
     "description": "Magic Result",
     "image_url": "https://i.imgur.com/R3ZzDjC.png",
-    "filename": "trace_input_1.zip",
-    "hash": "Qmc6j5LiDKe3DuX3VLc41UVSbmp4AtBJbpJVSumdgnh2g5"
+    "filename": "trace_output3.jpeg",
+    "hash": "QmX61mixN6Tzow87t5ArekX5DBDMKegiHZxVTw9HUf5t68"
   }
 ]
